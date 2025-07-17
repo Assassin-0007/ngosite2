@@ -6,21 +6,32 @@
     <title>NGO2 - Home</title>
     <style>
         :root {
-            --accent: #0d6efd;
-            --light-bg: #f4f8fd;
+            --primary: #1c1e26;
+            --accent: #4ff7b3;
+            --accent-dark: #059669;
+            --surface: #23253b;
+            --card: #292a3a;
+            --text-main: #ececec;
+            --text-muted: #c5c7d8;
+            --shadow: #16e5b055;
         }
         * { box-sizing: border-box; }
         body {
+            background: linear-gradient(120deg,#2e3054 0,#111320 100%);
+            background-image: url('https://currentaffairs.adda247.com/wp-content/uploads/multisite/sites/5/2024/08/28164754/NGO-Full-Form.png'), linear-gradient(120deg,#2e3054 0,#111320 100%);
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             margin: 0;
             font-family: 'Montserrat', Arial, sans-serif;
-            background: var(--light-bg);
-            color: #223;
+            color: var(--text-main);
             min-height: 100vh;
         }
         header {
-            background: white;
+            background: var(--surface);
             padding: 20px 0 10px 0;
-            box-shadow: 0 2px 18px #0001;
+            box-shadow: 0 2px 18px var(--shadow);
             display: flex;
             align-items: center;
             gap: 18px;
@@ -33,20 +44,20 @@
             width: 54px; height: 54px;
             display: flex;
             align-items: center; justify-content: center;
-            background: linear-gradient(135deg, #0d6efd 70%, #e5ecf5 100%);
+            background: linear-gradient(135deg, var(--accent) 70%, #19284b 100%);
             border-radius: 18px;
             font-weight: 900;
             font-size: 2rem;
-            color: #fff;
-            box-shadow: 0 2px 8px #0d6efd22;
+            color: #181d24;
+            box-shadow: 0 2px 12px var(--accent-dark);
             letter-spacing: -0.04em;
-            border: 3px solid #e7f1ff;
+            border: 3px solid var(--surface);
         }
         header h1 {
             font-size: 2rem;
-            margin: 0 0 0 0;
+            margin: 0;
             font-weight: 700;
-            color: #0d6efd;
+            color: var(--accent);
             letter-spacing: 0.03em;
         }
         nav {
@@ -54,26 +65,25 @@
             display: flex; gap: 36px;
         }
         nav a {
-            color: #0d6efd;
+            color: var(--accent);
             text-decoration: none;
             font-weight: 700;
-            padding: 5px 12px;
+            padding: 7px 14px;
             border-radius: 6px;
             transition: background 0.18s;
-            font-size: 1.08em;
+            font-size: 1.1em;
         }
         nav a:hover, nav a:focus {
-            background: #0d6efd14;
+            background: var(--accent-dark);
+            color: #fafdff;
             outline: none;
         }
-        
-
         .section-card {
-            background: white;
-            border-radius: 22px;
+            background: var(--card);
+            border-radius: 24px;
             padding: 36px 18px 36px 18px;
             max-width: 950px;
-            box-shadow: 0 2px 24px #0d6efd12;
+            box-shadow: 0 2px 36px var(--shadow);
             margin: 46px auto;
         }
         .section-title {
@@ -88,21 +98,54 @@
             font-size: 1.13rem;
             max-width: 680px;
             margin: 18px auto 0 auto;
-            color: #344;
+            color: var(--text-muted);
         }
         .banner-img {
             width: 100%;
             max-width: 950px;
             margin: 42px auto 0 auto;
             display: block;
-            border-radius: 20px;
-            box-shadow: 0 2px 32px #0d6efd15;
+            border-radius: 22px;
+            box-shadow: 0 2px 54px var(--shadow);
             object-fit: cover;
         }
-
-        /* Gallery */
-       
-        /* Events */
+        .gallery-grid2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 13px;
+            margin-top: 15px;
+            max-height: 700px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-dark) #2b3046;
+        }
+        .gallery-grid2::-webkit-scrollbar {
+            width: 8px;
+        }
+        .gallery-grid2::-webkit-scrollbar-track {
+            background: #23253b;
+            border-radius: 8px;
+        }
+        .gallery-grid2::-webkit-scrollbar-thumb {
+            background: var(--accent-dark);
+            border-radius: 8px;
+            border: 2px solid #23253b;
+        }
+        .gallery-grid2 img {
+            width: 100%; aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 13px;
+            cursor: pointer;
+            border: 2px solid #23253b;
+            box-shadow: 0 2px 18px #0008;
+            transition: transform 0.18s, box-shadow 0.2s;
+            background: #101018;
+        }
+        .gallery-grid2 img:hover {
+            transform: scale(1.09) rotate(-2deg);
+            box-shadow: 0 6px 44px var(--accent-dark);
+            z-index: 2;
+        }
         .events-list2 {
             display: flex;
             flex-direction: column;
@@ -111,11 +154,9 @@
             margin: 0 auto;
         }
         .event-card2 {
-            display: flex;
-            flex-direction: column;
-            background: #fafdff;
+            background: #23253b;
             border-radius: 18px;
-            box-shadow: 0 2px 18px #0d6efd17;
+            box-shadow: 0 2px 18px var(--shadow);
             overflow: hidden;
             padding-bottom: 8px;
         }
@@ -123,50 +164,47 @@
             width: 100%;
             height: 220px;
             object-fit: cover;
-            background: #d4eaff;
-            border-bottom: 3px solid #0d6efd33;
+            background: #181d24;
+            border-bottom: 3px solid var(--accent-dark);
         }
         .event-card2-content {
             padding: 20px 16px 6px 16px;
         }
         .event-date2 {
-            font-weight: 800;
-            color: #0d6efd;
-            font-size: 1.08em;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.09em;
             margin-bottom: 3px;
         }
         .event-title2 {
             font-size: 1.18rem;
             font-weight: 700;
             margin-bottom: 7px;
-            color: #222;
+            color: #fff;
         }
         .event-desc2 {
-            color: #444f;
+            color: #b8f5e8;
             font-size: 1.01rem;
         }
-
-        /* Contact */
-        #contact2 { background: #eef7ff; }
+        #contact2 { background: #19213b; }
         .contact2-content {
             text-align: center;
             font-size: 1.14rem;
-            color: #223;
+            color: var(--text-muted);
             margin-top: 11px;
         }
         .contact2-content a {
-            color: #0d6efd;
+            color: var(--accent);
             font-weight: bold;
         }
         .contact2-icons {
             font-size: 2.1rem;
-            color: #0d6efd;
+            color: var(--accent);
             margin-bottom: 10px;
         }
-        /* Footer */
         footer {
             margin-top: 36px;
-            background: linear-gradient(90deg,#0d6efd 80%, #e5ecf5);
+            background: linear-gradient(90deg,#2dbeb3 80%, #1f243b 100%);
             color: #fff;
             border-radius: 18px 18px 0 0;
             text-align: center;
@@ -176,12 +214,12 @@
         .social-icons2 a {
             font-size: 1.5em;
             margin: 0 9px;
-            color: #fff;
+            color: #c8fff4;
             text-decoration: none;
             transition: color .2s;
         }
         .social-icons2 a:hover {
-            color: #ffd900;
+            color: #fded61;
         }
         .newsletter2 input[type="email"] {
             padding: 7px 13px;
@@ -190,10 +228,11 @@
             font-size: 1rem;
             margin-right: 7px;
             outline: none;
+            background: #23253b; color: #eee;
         }
         .newsletter2 button {
-            background: #fff;
-            color: #0d6efd;
+            background: var(--accent);
+            color: #172442;
             border: none;
             font-weight:700;
             border-radius: 6px;
@@ -203,7 +242,8 @@
             transition: background .2s, color .2s;
         }
         .newsletter2 button:hover {
-            background: #d2ebff;
+            background: #23253b;
+            color: var(--accent);
         }
         @media (max-width:700px) {
             header {
@@ -214,12 +254,11 @@
             .section-card { padding: 26px 5vw; }
             .banner-img { border-radius: 0; }
             .event-image2 { height: 150px; }
+            .gallery-grid2 { max-height: 450px; }
         }
         @media (max-width:450px) {
             .about2, .section-card, #contact2 { font-size: .98rem;}
         }
-
-        /* Modal for gallery images */
         .modal2 {
             display: none; position: fixed; left:0; top:0; right:0; bottom:0;
             justify-content: center; align-items: center;
@@ -228,8 +267,8 @@
         }
         .modal2.open { display: flex; }
         .modal2-content {
-            background: #fff; padding: 0; border-radius: 16px; 
-            box-shadow: 0 16px 60px #0d6efd72;
+            background: #23253b; padding: 0; border-radius: 16px; 
+            box-shadow: 0 16px 60px var(--accent-dark);
             max-width: 96vw; max-height: 94vh;
             display: flex; flex-direction: column;
         }
@@ -239,15 +278,15 @@
             display: block;
         }
         .modal2-close {
-            background: #0d6efd;
-            color: #fff; border: none;
+            background: var(--accent);
+            color: #181d24; border: none;
             font-size: 2rem; font-weight: bold;
             border-radius: 8px; align-self: flex-end;
             margin: 7px 15px 0 0; cursor: pointer;
             padding: 0 10px; height: 36px; line-height: 34px;
             transition: background .2s;
         }
-        .modal2-close:hover { background: #083760;}
+        .modal2-close:hover { background: var(--accent-dark);}
     </style>
 </head>
 <body>
@@ -399,32 +438,4 @@
         });
     </script>
 </body>
-<!-- In your <style> block, replace the previous .gallery-grid2 definition with: -->
-<style>
-/* ...existing styles above... */
-.gallery-grid2 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 13px;
-    margin-top: 15px;
-    max-height: 700px;          /* 3 rows visible; adjust as needed */
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #0d6efd80 #eaf3ff;
-}
-.gallery-grid2::-webkit-scrollbar {
-    width: 8px;
-}
-.gallery-grid2::-webkit-scrollbar-track {
-    background: #eaf3ff;
-    border-radius: 8px;
-}
-.gallery-grid2::-webkit-scrollbar-thumb {
-    background-color: #0d6efd99;
-    border-radius: 8px;
-    border: 2px solid #eaf3ff;
-}
-/* ...existing styles below... */
-</style>
-
 </html>
