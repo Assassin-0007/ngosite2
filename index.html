@@ -3,290 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGO2 - Home</title>
+    <title>NGO2 – Home</title>
     <style>
         :root {
-            --primary: #1c1e26;
-            --accent: #4ff7b3;
-            --accent-dark: #059669;
-            --surface: #23253b;
-            --card: #292a3a;
-            --text-main: #ececec;
-            --text-muted: #c5c7d8;
-            --shadow: #16e5b055;
+            --green: #4fd87d;
+            --blue: #2bb1e0;
+            --pink: #fc33a7;
+            --accent: #ffd600;
+            --surface: #faf7f4;
+            --muted: #47495b;
+            --glass: rgba(255,255,255,0.83);
+            --field-bg: #e7ecf6;
+            --text: #251d37;
         }
-        * { box-sizing: border-box; }
+        html,body { height:100%; margin:0; }
         body {
-            background: linear-gradient(120deg,#2e3054 0,#111320 100%);
-            background-image: url('https://currentaffairs.adda247.com/wp-content/uploads/multisite/sites/5/2024/08/28164754/NGO-Full-Form.png'), linear-gradient(120deg,#2e3054 0,#111320 100%);
-            background-blend-mode: overlay;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            margin: 0;
-            font-family: 'Montserrat', Arial, sans-serif;
-            color: var(--text-main);
             min-height: 100vh;
+            background:
+               linear-gradient(140deg,#2bb1e0 0%,#fc33a7 85%) fixed;
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+            color: var(--text);
+            letter-spacing: 0.01em;
         }
         header {
-            background: var(--surface);
-            padding: 20px 0 10px 0;
-            box-shadow: 0 2px 18px var(--shadow);
+            width: 100%;
+            padding: 16px 0 10px 0;
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 18px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            background: none;
+            z-index: 2;
         }
         .logo2 {
-            margin-left: 32px;
-            width: 54px; height: 54px;
-            display: flex;
-            align-items: center; justify-content: center;
-            background: linear-gradient(135deg, var(--accent) 70%, #19284b 100%);
-            border-radius: 18px;
-            font-weight: 900;
-            font-size: 2rem;
-            color: #181d24;
-            box-shadow: 0 2px 12px var(--accent-dark);
-            letter-spacing: -0.04em;
-            border: 3px solid var(--surface);
+            width:80px; height:80px;
+            display: flex; align-items: center; justify-content: center;
+            background:linear-gradient(132deg, var(--green) 0%,var(--blue) 66%, var(--pink) 100%);
+            clip-path: polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);
+            font-size:2.8em; font-weight:800;
+            color:#fff; letter-spacing:-.06em;
+            margin-right: 18px;
+            filter: drop-shadow(0 6px 16px #2bb1e088);
         }
-        header h1 {
-            font-size: 2rem;
-            margin: 0;
-            font-weight: 700;
-            color: var(--accent);
-            letter-spacing: 0.03em;
+        h1 {
+            font-size:2.1em; font-family:'Montserrat',sans-serif;
+            color:var(--surface); text-shadow:0 2px 22px #2bb1e099,0 1px 0 #2196f3;
         }
         nav {
-            margin-left: auto; margin-right: 32px;
-            display: flex; gap: 36px;
+            position: absolute; right: 3vw; top: 29px;
+            display: flex; gap: 25px;
         }
         nav a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 700;
-            padding: 7px 14px;
-            border-radius: 6px;
-            transition: background 0.18s;
-            font-size: 1.1em;
+            font-weight: 700; padding: 8px 22px;
+            border-radius: 100px;
+            background: var(--surface);
+            color: var(--pink);
+            font-size: 1.08em;
+            letter-spacing:.03em;
+            border: 2.5px solid var(--blue);
+            transition: background .18s, color .14s, border .13s;
         }
         nav a:hover, nav a:focus {
-            background: var(--accent-dark);
-            color: #fafdff;
-            outline: none;
+            background: var(--accent);
+            color: var(--green);
+            border-color: var(--pink);
+            text-decoration:none;
+            outline:none;
         }
+
+        /* Glass cards for all sections */
         .section-card {
-            background: var(--card);
-            border-radius: 24px;
-            padding: 36px 18px 36px 18px;
-            max-width: 950px;
-            box-shadow: 0 2px 36px var(--shadow);
-            margin: 46px auto;
+            margin:48px auto 0 auto;
+            max-width: 850px;
+            border-radius: 33px;
+            box-shadow: 0 10px 60px #fc33a745;
+            background: var(--glass);
+            padding: 49px 6vw 41px;
+            backdrop-filter: blur(8px);
+            border: 2.5px solid var(--pink);
         }
         .section-title {
-            text-align: center;
-            color: var(--accent);
-            font-family: inherit;
-            letter-spacing: 0.02em;
-            font-size: 2.1em;
-            margin-bottom: 18px;
+            text-align:center;
+            font-weight:900;
+            font-size:2.09em;
+            color:var(--blue);
+            letter-spacing: .05em;
+            margin-bottom:18px; 
+        }
+        #contact2 .section-title { color:var(--green); }
+        #gallery2 .section-title { color:#fc33a7;}
+
+        /* Contact minimalist chip blocks first */
+        #contact2 .contact2-content {
+            display:flex;
+            flex-direction: row; flex-wrap:wrap;
+            justify-content:center;
+            gap:28px;
+            margin: 12px 0 8px 0;
+        }
+        .contact-chip {
+            background: linear-gradient(115deg,#fff8,#e7ecf6 60%);
+            color:var(--muted);
+            border-radius:20px 38px 18px 28px/ 38px 24px 26px 23px;
+            border:2.5px solid var(--green);
+            padding:18px 28px;
+            font-size:1.18em;
+            min-width:230px;
+            margin-bottom:8px;
+            font-weight:600;
+            display: flex; gap:12px; align-items: center;
+            box-shadow: 0 2px 9px #4fd87d22;
+        }
+        .contact-chip strong { color:var(--blue);}
+        .contact2-icons {
+            text-align:center; font-size:2rem; margin-bottom:10px;
+        }
+
+        /* About: cards with floating quote and curved divider */
+        #about2 {
+            background: linear-gradient(80deg,#fc33a720 0,#2bb1e033 92%);
+            border: none;
+            box-shadow: 0 5px 60px #fff6, 0 2px 12px #2bb1e033;
+            position:relative;
         }
         .about2 {
-            font-size: 1.13rem;
+            font-size: 1.22rem;
+            margin: 9px auto 0 auto;
+            color: var(--muted);
             max-width: 680px;
-            margin: 18px auto 0 auto;
-            color: var(--text-muted);
+            line-height:1.74;
+            position:relative;
         }
-        .banner-img {
-            width: 100%;
-            max-width: 950px;
-            margin: 42px auto 0 auto;
+        .about-quote {
             display: block;
-            border-radius: 22px;
-            box-shadow: 0 2px 54px var(--shadow);
-            object-fit: cover;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1.15rem;
+            background: var(--green);
+            color: #fff;
+            padding: 11px 22px;
+            border-radius: 22px 49px 12px 38px;
+            position: absolute; bottom: -28px; left: 35%;
+            box-shadow: 0 3px 20px #fc33a740;
+            border: 2.5px solid var(--blue);
+        }
+
+        /* Events as "bleed" horizontal cards with neon border */
+        #events2 {
+            padding:0; background: none;
+            box-shadow:none; border:none; margin-top: 54px;
+        }
+        .events-list2 {
+            display: flex; gap:36px;
+            overflow-x:auto; padding: 15px 0 11px;
+            background: none;
+        }
+        .event-card2 {
+            min-width:310px; max-width:340px;
+            border-radius: 27px;
+            box-shadow: 0 5px 26px var(--pink);
+            border: 5px solid var(--blue);
+            background: linear-gradient(120deg,var(--surface) 40%,#f9e2ef90 100%);
+            margin-right:10px;
+            display: flex; flex-direction: column;
+            transition:transform .16s, box-shadow .12s;
+        }
+        .event-card2:hover {
+            transform: translateY(-7px) scale(1.04);
+            box-shadow: 0 14px 64px var(--green);
+            border-color: var(--accent);
+        }
+        .event-image2 {
+            width:100%; height:170px; object-fit:cover;
+            border-radius:27px 27px 0 0;
+            border-bottom: 3px solid var(--pink);
+        }
+        .event-card2-content {
+            padding: 17px 20px 10px 20px;
+        }
+        .event-date2 {
+            font-weight:700; color:var(--blue);
+            margin-bottom:5px; letter-spacing:.04em;
+        }
+        .event-title2 {
+            font-size:1.12rem;
+            font-weight:900;
+            color:var(--pink);
+        }
+        .event-desc2 {
+            font-size:1.01rem; color: var(--muted);
+            margin-top:5px;
+        }
+
+        /* Gallery last: bold glass grid with pink border */
+        #gallery2 {
+            border: 3px solid var(--pink);
+            background:linear-gradient(111deg,#fff8 60%,#f9e2ef40 100%);
+            margin-bottom: 0;
+            padding-bottom: 36px;
         }
         .gallery-grid2 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 13px;
-            margin-top: 15px;
-            max-height: 700px;
+            gap: 16px;
+            margin-top: 13px;
+            max-height: 590px;
             overflow-y: auto;
             scrollbar-width: thin;
-            scrollbar-color: var(--accent-dark) #2b3046;
+            scrollbar-color: var(--pink) #e7ecf6;
         }
-        .gallery-grid2::-webkit-scrollbar {
-            width: 8px;
-        }
+        .gallery-grid2::-webkit-scrollbar { width: 8px; }
         .gallery-grid2::-webkit-scrollbar-track {
-            background: #23253b;
-            border-radius: 8px;
+            background: #e7ecf6;
+            border-radius: 7px;
         }
         .gallery-grid2::-webkit-scrollbar-thumb {
-            background: var(--accent-dark);
-            border-radius: 8px;
-            border: 2px solid #23253b;
+            background: var(--pink);
+            border-radius: 7px;
+            border: 2px solid #e7ecf6;
         }
         .gallery-grid2 img {
             width: 100%; aspect-ratio: 4/3;
             object-fit: cover;
-            border-radius: 13px;
+            border-radius: 16px;
             cursor: pointer;
-            border: 2px solid #23253b;
-            box-shadow: 0 2px 18px #0008;
-            transition: transform 0.18s, box-shadow 0.2s;
-            background: #101018;
+            border: 2px solid var(--accent);
+            box-shadow: 0 2px 12px #fc33a733;
+            background: #f9e2ef90;
+            transition: transform 0.18s, box-shadow 0.11s;
         }
-        .gallery-grid2 img:hover {
-            transform: scale(1.09) rotate(-2deg);
-            box-shadow: 0 6px 44px var(--accent-dark);
-            z-index: 2;
+        .gallery-grid2 img:hover, .gallery-grid2 img:focus {
+            transform: scale(1.10) rotate(-1deg);
+            box-shadow: 0 10px 34px var(--pink);
+            border-color: var(--accent);
+            z-index: 3;
+            outline: none;
         }
-        .events-list2 {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            max-width: 730px;
-            margin: 0 auto;
-        }
-        .event-card2 {
-            background: #23253b;
-            border-radius: 18px;
-            box-shadow: 0 2px 18px var(--shadow);
-            overflow: hidden;
-            padding-bottom: 8px;
-        }
-        .event-image2 {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            background: #181d24;
-            border-bottom: 3px solid var(--accent-dark);
-        }
-        .event-card2-content {
-            padding: 20px 16px 6px 16px;
-        }
-        .event-date2 {
-            font-weight: 700;
-            color: var(--accent);
-            font-size: 1.09em;
-            margin-bottom: 3px;
-        }
-        .event-title2 {
-            font-size: 1.18rem;
-            font-weight: 700;
-            margin-bottom: 7px;
-            color: #fff;
-        }
-        .event-desc2 {
-            color: #b8f5e8;
-            font-size: 1.01rem;
-        }
-        #contact2 { background: #19213b; }
-        .contact2-content {
-            text-align: center;
-            font-size: 1.14rem;
-            color: var(--text-muted);
-            margin-top: 11px;
-        }
-        .contact2-content a {
-            color: var(--accent);
-            font-weight: bold;
-        }
-        .contact2-icons {
-            font-size: 2.1rem;
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
+
+        /* Newsletter on footer with modern chips */
         footer {
-            margin-top: 36px;
-            background: linear-gradient(90deg,#2dbeb3 80%, #1f243b 100%);
-            color: #fff;
-            border-radius: 18px 18px 0 0;
+            margin-top: 52px;
+            background: var(--surface);
+            color: var(--muted);
+            border-radius: 31px 31px 0 0;
             text-align: center;
-            font-size: 1rem;
-            padding: 28px 8px 16px 8px;
+            font-size: 1.09rem;
+            padding: 36px 12px 22px 12px;
+            box-shadow:0 2px 20px #2bb1e036;
         }
         .social-icons2 a {
-            font-size: 1.5em;
-            margin: 0 9px;
-            color: #c8fff4;
-            text-decoration: none;
-            transition: color .2s;
+            font-size: 1.7em;
+            margin: 0 19px;
+            color: var(--blue);
+            transition: color .14s;
+            vertical-align: middle;
+            filter:drop-shadow(0 1px 8px #fc33a720);
         }
-        .social-icons2 a:hover {
-            color: #fded61;
-        }
+        .social-icons2 a:hover { color: var(--pink);}
         .newsletter2 input[type="email"] {
-            padding: 7px 13px;
-            border-radius: 6px;
-            border: none;
-            font-size: 1rem;
+            padding: 12px 18px;
+            border-radius: 18px;
+            border: 2px solid var(--blue);
             margin-right: 7px;
-            outline: none;
-            background: #23253b; color: #eee;
+            margin-top:10px;
+            font-size: 1.07rem;
+            background: #fff; color: var(--muted);
+            font-weight: 600;
+            transition: border .13s;
         }
         .newsletter2 button {
-            background: var(--accent);
-            color: #172442;
+            background: var(--green);
+            color: #181d24;
             border: none;
-            font-weight:700;
-            border-radius: 6px;
-            padding: 7px 17px;
-            font-size: 1rem;
+            border-radius: 15px;
+            padding: 13px 28px;
+            font-size: 1.06rem;
+            font-weight:800;
+            margin-left: 8px;
             cursor: pointer;
-            transition: background .2s, color .2s;
+            filter: drop-shadow(0 2px 11px #33d7aa99);
+            transition: background .13s, color .13s;
         }
         .newsletter2 button:hover {
-            background: #23253b;
-            color: var(--accent);
+            background: var(--blue);
+            color: #fff;
         }
-        @media (max-width:700px) {
-            header {
-                flex-direction: column; align-items: flex-start;
-            }
-            .logo2 { margin-left: 18px; }
-            nav { margin-left: 18px; margin-right: 0; gap: 6px;}
-            .section-card { padding: 26px 5vw; }
-            .banner-img { border-radius: 0; }
-            .event-image2 { height: 150px; }
-            .gallery-grid2 { max-height: 450px; }
+        @media (max-width:900px) {
+            .section-card { padding: 26px 3vw;}
+        }
+        @media (max-width:670px) {
+            nav a { font-size:.93em; padding:7px 9px;}
+            .section-title {font-size:1.25em;}
+            .about2,.event-title2,.event-desc2 {font-size:.99em;}
+            .event-card2 { min-width:210px;}
         }
         @media (max-width:450px) {
-            .about2, .section-card, #contact2 { font-size: .98rem;}
+            .logo2 {width:42px;height:42px;}
+            .section-card, #contact2, #about2 { font-size: .96rem;}
         }
+        /* Modal for gallery images */
         .modal2 {
             display: none; position: fixed; left:0; top:0; right:0; bottom:0;
             justify-content: center; align-items: center;
-            background: #223b;
+            background: #251d3788;
             z-index: 1000;
         }
         .modal2.open { display: flex; }
         .modal2-content {
-            background: #23253b; padding: 0; border-radius: 16px; 
-            box-shadow: 0 16px 60px var(--accent-dark);
+            background: var(--glass); padding: 0; border-radius: 30px; 
+            box-shadow: 0 20px 60px #fc33a766;
             max-width: 96vw; max-height: 94vh;
             display: flex; flex-direction: column;
         }
         .modal2-content img {
             max-width: 85vw; max-height: 80vh;
-            border-radius: 13px 13px 0 0;
+            border-radius: 29px 29px 0 0;
             display: block;
         }
         .modal2-close {
-            background: var(--accent);
-            color: #181d24; border: none;
-            font-size: 2rem; font-weight: bold;
-            border-radius: 8px; align-self: flex-end;
-            margin: 7px 15px 0 0; cursor: pointer;
-            padding: 0 10px; height: 36px; line-height: 34px;
-            transition: background .2s;
+            background: var(--pink);
+            color: #fff; border: none;
+            font-size: 2.1rem; font-weight: bold;
+            border-radius: 17px; align-self: flex-end;
+            margin: 7px 13px 0 0; cursor: pointer;
+            padding: 0 15px; height: 50px; line-height: 46px;
+            transition: background .18s;
         }
-        .modal2-close:hover { background: var(--accent-dark);}
+        .modal2-close:hover { background: var(--accent);}
     </style>
 </head>
 <body>
@@ -294,29 +336,65 @@
         <div class="logo2" aria-label="NGO2 logo">N2</div>
         <h1>NGO2 Foundation</h1>
         <nav>
-            <a href="#about2">About</a>
-            <a href="#gallery2">Gallery</a>
-            <a href="#events2">Events</a>
             <a href="#contact2">Contact</a>
+            <a href="#about2">About</a>
+            <a href="#events2">Events</a>
+            <a href="#gallery2">Gallery</a>
         </nav>
     </header>
 
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" 
-         alt="Banner for NGO2" class="banner-img"
-         style="margin-bottom: 0;"/>
+    <section class="section-card" id="contact2">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact2-icons">📞 ✉️</div>
+        <div class="contact2-content">
+            <div class="contact-chip">
+                <span>📞</span>
+                <span><strong>Phone:</strong> <a href="tel:+911234567890" style="color:var(--blue)">+91 12345 67890</a></span>
+            </div>
+            <div class="contact-chip">
+                <span>✉️</span>
+                <span><strong>Email:</strong> <a href="mailto:hello@ngo2.org" style="color:var(--green)">hello@ngo2.org</a></span>
+            </div>
+        </div>
+    </section>
 
     <section class="section-card" id="about2">
         <h2 class="section-title">About Us</h2>
         <div class="about2">
-            <p>
-                <b>NGO2 Foundation</b> is devoted to building a brighter future through educational outreach, health support, and sustainable community projects. Since our founding in 2012, our volunteers and team have impacted thousands of lives in rural and urban areas alike.
-            </p>
-            <p>
-                We believe in <b>empathy, progress, and transparency</b>. Every initiative we undertake is rooted in our mission to empower underprivileged individuals, foster inclusivity, and create lasting environmental, social, and economic benefits.
-            </p>
-            <p>
-                <i>From our founder:</i> "Working together, we can spark hope and bring about real change. Thank you for believing in our mission."
-            </p>
+            NGO2 Foundation invents new paths for positive change: from educational outreach and health support to sustainable community transformation. Since our founding in 2012, we’ve impacted thousands by putting <b>progress, creativity, and transparency</b> at our core.
+            <br><br>
+            All initiatives are built around underprivileged individuals and their stories—together, we ignite hope and build opportunity for all.
+            <span class="about-quote">"Working together truly sparks the change we believe in."</span>
+        </div>
+    </section>
+
+    <section class="section-card" id="events2">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="events-list2">
+            <article class="event-card2">
+                <img class="event-image2" src="https://images.unsplash.com/photo-1515165562835-cd4fa410bafb?auto=format&fit=crop&w=600&q=80" alt="Annual Fundraiser" />
+                <div class="event-card2-content">
+                    <div class="event-date2">August 15, 2025</div>
+                    <div class="event-title2">Annual Fundraiser Night</div>
+                    <div class="event-desc2">An inspiring evening supporting education—featuring creators, live music, and a vibrant community auction.</div>
+                </div>
+            </article>
+            <article class="event-card2">
+                <img class="event-image2" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Community Health Camp" />
+                <div class="event-card2-content">
+                    <div class="event-date2">September 20, 2025</div>
+                    <div class="event-title2">Community Health Camp</div>
+                    <div class="event-desc2">Wellness workshops, free checkups, food, and laughter for families—serving those who need it most.</div>
+                </div>
+            </article>
+            <article class="event-card2">
+                <img class="event-image2" src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=600&q=80" alt="Cleanup Drive" />
+                <div class="event-card2-content">
+                    <div class="event-date2">November 2, 2025</div>
+                    <div class="event-title2">Green Clean Up Drive</div>
+                    <div class="event-desc2">Volunteers revive public spaces—planting, painting, restoring green life to the city’s heart.</div>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -346,61 +424,18 @@
         </div>
     </section>
 
-    <section class="section-card" id="events2">
-        <h2 class="section-title">Events</h2>
-        <div class="events-list2">
-            <article class="event-card2">
-                <img class="event-image2" src="https://images.unsplash.com/photo-1515165562835-cd4fa410bafb?auto=format&fit=crop&w=600&q=80" alt="Annual Fundraiser Event" />
-                <div class="event-card2-content">
-                    <div class="event-date2">August 15, 2025</div>
-                    <div class="event-title2">Annual Fundraiser Night</div>
-                    <div class="event-desc2">A heartwarming evening to raise support for our educational programs, with guest speakers, art displays, and performances.</div>
-                </div>
-            </article>
-            <article class="event-card2">
-                <img class="event-image2" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Community Health Camp" />
-                <div class="event-card2-content">
-                    <div class="event-date2">September 20, 2025</div>
-                    <div class="event-title2">Community Health Camp</div>
-                    <div class="event-desc2">Offering free medical checkups, wellness workshops, and nutrition advice for families in need.</div>
-                </div>
-            </article>
-            <article class="event-card2">
-                <img class="event-image2" src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=600&q=80" alt="Clean Up Drive" />
-                <div class="event-card2-content">
-                    <div class="event-date2">November 2, 2025</div>
-                    <div class="event-title2">Green Clean Up Drive</div>
-                    <div class="event-desc2">Bringing together volunteers to restore parks and plant trees for a cleaner, greener city.</div>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section class="section-card" id="contact2">
-        <h2 class="section-title">Contact Us</h2>
-        <div class="contact2-icons">📞 ✉️</div>
-        <div class="contact2-content">
-            <p>Let's connect and make a difference!</p>
-            <p>
-                <strong>Phone:</strong> <a href="tel:+911234567890">+91 12345 67890</a><br>
-                <strong>Email:</strong> <a href="mailto:hello@ngo2.org">hello@ngo2.org</a>
-            </p>
-        </div>
-    </section>
-
     <footer>
         <div class="social-icons2" aria-label="Social media links">
             <a href="#" title="Facebook">&#x1F426;</a>
             <a href="#" title="Twitter">&#x1F426;</a>
             <a href="#" title="Instagram">&#x1F426;</a>
         </div>
-        <form class="newsletter2" aria-label="Newsletter signup">
+        <form class="newsletter2" aria-label="Newsletter signup" style="margin-bottom:4px;margin-top:14px;">
             <input type="email" placeholder="Subscribe for updates" required>
             <button type="submit">Subscribe</button>
         </form>
-        <p style="margin-top:14px;font-size:.98em;">&copy; 2025 NGO2 Foundation. All rights reserved.</p>
+        <span style="font-size:.97em;display:block;margin-top:9px;">&copy; 2025 NGO2 Foundation. All rights reserved.</span>
     </footer>
-
     <!-- Modal for Gallery -->
     <div class="modal2" id="modal2">
         <div class="modal2-content">
